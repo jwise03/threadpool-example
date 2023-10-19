@@ -17,9 +17,10 @@ public class ThreadPoolApp {
             Job[] jobs = new Job[numberOfJobs];
             for (int i = 0; i < numberOfJobs; i++) {
                 jobs[i] = new Job(i);
-                pool.execute(jobs[i]);
+                pool.execute(jobs[i]); //executes the command at future time.
             }
-            pool.shutdown();
+            pool.shutdown(); //Shutdown : previously submitted tasks are executed,
+                             // but no new tasks will be accepted.
             System.out.println("Last line " + Thread.currentThread().getName());
         } catch (NumberFormatException e) {
             ThreadPoolApp.error();
